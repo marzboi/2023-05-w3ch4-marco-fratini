@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { Component } from './component';
+import { Component } from '../source/component';
 
 export class Header extends Component {
   constructor(selector: string, public title: string) {
