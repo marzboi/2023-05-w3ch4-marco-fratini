@@ -1,6 +1,3 @@
-/* eslint-disable no-new */
-/* eslint-disable no-unused-vars */
-
 import { generateMovieList } from '../../data/generateMovies';
 import { Movie } from '../../types/movie';
 import { Component } from '../source/component';
@@ -12,6 +9,31 @@ export class MovieList extends Component {
     this.movies = generateMovieList();
     this.template = this.createTemplate();
     this.render();
+  }
+
+  render(): void {
+    super.cleanHtml();
+    this.template = this.createTemplate();
+    super.render();
+    this.element.querySelectorAll('.fa-star').forEach((item) => {
+      item.addEventListener('click', this.handleScore.bind(this));
+    });
+
+    this.element.querySelectorAll('.fa-times-circle').forEach((item) => {
+      item.addEventListener('click', this.handleDelete.bind(this));
+    });
+  }
+
+  handleDelete() {
+    const element = event.target as HTMLElement;
+    this.movies = this.movies.filter(
+      (item) => item.name !== element.dataset.id
+    );
+    this.render();
+  }
+
+  handleScore() {
+    console.log(true);
   }
 
   createTemplate() {
@@ -39,7 +61,7 @@ export class MovieList extends Component {
                   <i class="icon--score fas fa-star" title="5/5"></i>
                 </li>
               </ul>
-              <i class="fas fa-times-circle icon--delete"></i>
+              <i class="fas fa-times-circle icon--delete" data-id="${item.name}"></i>
             </li>`
       )
       .join('');
