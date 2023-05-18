@@ -1,7 +1,7 @@
 /* eslint-disable max-params */
-import { movieInfo } from '../data/movieType';
+import { movieInfo } from './movieType';
 
-export class Movies implements movieInfo {
+export class Movie implements movieInfo {
   id: number;
   name: string;
   creator: string;
@@ -11,7 +11,7 @@ export class Movies implements movieInfo {
   score: number;
   emmies: number;
 
-  static numberOfCreation = 0;
+  static numberOfCreation = 1;
 
   static increaseCounter() {
     return this.numberOfCreation++;
@@ -24,7 +24,7 @@ export class Movies implements movieInfo {
     poster: string,
     emmies: number
   ) {
-    this.id = Movies.increaseCounter();
+    this.id = Movie.increaseCounter();
     this.name = name;
     this.creator = creator;
     this.year = year;
