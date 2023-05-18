@@ -10,6 +10,7 @@ export class MovieList extends Component {
   constructor(selector: string) {
     super(selector);
     this.movies = generateMovieList();
+    this.template = this.createTemplate();
     this.render();
   }
 

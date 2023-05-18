@@ -34,7 +34,7 @@ export const generateMovieList = () => {
       'Atypical',
       'Robia Rashid',
       2017,
-      'https://www.cine.com/media/series/2711.jpg',
+      'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1bmOeA.img?w=768&h=432&m=6',
       0
     ),
   ];
