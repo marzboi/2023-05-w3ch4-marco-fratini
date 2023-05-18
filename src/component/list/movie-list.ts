@@ -1,5 +1,7 @@
+/* eslint-disable no-restricted-globals */
 import { generateMovieList } from '../../data/generateMovies';
 import { Movie } from '../../types/movie';
+import { movieInfo } from '../../types/movieType';
 import { Component } from '../source/component';
 
 export class MovieList extends Component {
@@ -24,8 +26,8 @@ export class MovieList extends Component {
     });
   }
 
-  handleDelete() {
-    const element = event.target as HTMLElement;
+  handleDelete(): void {
+    const element = event?.target as HTMLButtonElement;
     this.movies = this.movies.filter(
       (item) => item.name !== element.dataset.id
     );
