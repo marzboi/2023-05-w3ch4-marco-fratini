@@ -37,14 +37,8 @@ export class MovieList extends Component {
     const movieRated = this.movies.find(
       (item) => item.name === element.dataset.set
     );
-
     if (!movieRated!.watched) {
       movieRated!.watched = true;
-      const index = this.movies.findIndex(
-        (item) => item.name === element.dataset.set
-      );
-      const [ratedMovie] = this.movies.splice(index, 1);
-      this.movies.push(ratedMovie);
     }
 
     this.render();

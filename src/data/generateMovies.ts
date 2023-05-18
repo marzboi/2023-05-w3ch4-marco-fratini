@@ -37,6 +37,27 @@ export const generateMovieList = () => {
       'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1bmOeA.img?w=768&h=432&m=6',
       0
     ),
+    new Movie(
+      'Amongus',
+      'Marquito Sevilla',
+      1993,
+      'https://cdn1.epicgames.com/salesEvent/salesEvent/amoguslandscape_2560x1440-3fac17e8bb45d81ec9b2c24655758075',
+      0
+    ),
+    new Movie(
+      'La Venganza del Asturiano',
+      'Nitin Ganwani',
+      2021,
+      'https://media.licdn.com/dms/image/D4D03AQFGife7JEHbhw/profile-displayphoto-shrink_800_800/0/1675351328921?e=1689811200&v=beta&t=hOj21j8grOMAYA6jM-wO1AAhmm_7N9AK_2SdQfX3zI0',
+      400
+    ),
+    new Movie(
+      'The Premaritimal Outcuums',
+      'David Ternasky',
+      2023,
+      'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/254DWZJZNNCZZCLNNFHURL2TPA.jpg',
+      2
+    ),
   ];
   return movies;
 };
