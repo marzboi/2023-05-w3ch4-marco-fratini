@@ -39,6 +39,7 @@ export class MovieList extends Component {
     );
     if (!movieRated!.watched) {
       movieRated!.watched = true;
+      movieRated!.score = Number(element.dataset.score);
     }
 
     this.render();

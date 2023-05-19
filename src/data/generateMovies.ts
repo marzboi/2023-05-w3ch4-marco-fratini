@@ -20,7 +20,7 @@ export const generateMovieList = () => {
       'Mad Men',
       'Matthew Weiner',
       2007,
-      'https://pics.filmaffinity.com/Mad_Men_Serie_de_TV-351490728-large.jpg',
+      'https://flxt.tmsimg.com/assets/p9032866_b1t_v8_aa.jpg',
       116
     ),
     new Movie(
