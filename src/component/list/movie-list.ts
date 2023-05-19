@@ -34,12 +34,13 @@ export class MovieList extends Component {
 
   handleScore(event: Event) {
     const element = event?.target as HTMLButtonElement;
+    console.log(element);
     const movieRated = this.movies.find(
       (item) => item.name === element.dataset.set
     );
     if (!movieRated!.watched) {
       movieRated!.watched = true;
-      movieRated!.score = Number(element.dataset.score);
+      movieRated!.score = Number(element.id);
     }
 
     this.render();
@@ -52,27 +53,41 @@ export class MovieList extends Component {
     watchedSeries = watchedSeries.map(
       (item) => `
             <li class="serie">
-              <img class="serie__poster" src="${item.poster}" alt="${item.name}" />
+              <img class="serie__poster" src="${item.poster}" alt="${
+        item.name
+      }" />
               <h4 class="serie__title">${item.name}</h4>
               <p class="serie__info">${item.creator} (${item.year})</p>
               <ul class="score">
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="1/5"></i>
+                  <i class="icon--score fas fa-star ${
+                    item.score >= 1 ? 'rated' : ''
+                  }" id="1" data-set="${item.name}" title="1/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="2/5"></i>
+                  <i class="icon--score fas fa-star ${
+                    item.score >= 2 ? 'rated' : ''
+                  }" id="2" data-set="${item.name}" title="2/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="3/5"></i>
+                  <i class="icon--score fas fa-star ${
+                    item.score >= 3 ? 'rated' : ''
+                  }" id="3" data-set="${item.name}" title="3/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="4/5"></i>
+                  <i class="icon--score fas fa-star ${
+                    item.score >= 4 ? 'rated' : ''
+                  }" id="4" data-set="${item.name}" title="4/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="5/5"></i>
+                  <i class="icon--score fas fa-star ${
+                    item.score >= 5 ? 'rated' : ''
+                  }" id="5" data-set="${item.name}" title="5/5"></i>
                 </li>
               </ul>
-              <i class="fas fa-times-circle icon--delete" data-id="${item.name}"></i>
+              <i class="fas fa-times-circle icon--delete" data-id="${
+                item.name
+              }"></i>
             </li>`
     );
 
@@ -84,19 +99,19 @@ export class MovieList extends Component {
               <p class="serie__info">${item.creator} (${item.year})</p>
               <ul class="score">
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="1/5"></i>
+                  <i class="icon--score fas fa-star" id="1" data-set="${item.name}" title="1/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="2/5"></i>
+                  <i class="icon--score fas fa-star" id="2" data-set="${item.name}" title="2/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="3/5"></i>
+                  <i class="icon--score fas fa-star" id="3" data-set="${item.name}" title="3/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="4/5"></i>
+                  <i class="icon--score fas fa-star" id="4" data-set="${item.name}" title="4/5"></i>
                 </li>
                 <li class="score__star">
-                  <i class="icon--score fas fa-star" data-set="${item.name}" title="5/5"></i>
+                  <i class="icon--score fas fa-star" id="5" data-set="${item.name}" title="5/5"></i>
                 </li>
               </ul>
               <i class="fas fa-times-circle icon--delete" data-id="${item.name}"></i>
