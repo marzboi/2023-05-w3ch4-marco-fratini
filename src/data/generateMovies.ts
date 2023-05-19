@@ -41,7 +41,7 @@ export const generateMovieList = () => {
       'Amongus',
       'Marquito Sevilla',
       1993,
-      'https://cdn1.epicgames.com/salesEvent/salesEvent/amoguslandscape_2560x1440-3fac17e8bb45d81ec9b2c24655758075',
+      'https://media.tenor.com/jUMex_rdqPwAAAAM/among-us-twerk.gif',
       0
     ),
     new Movie(
